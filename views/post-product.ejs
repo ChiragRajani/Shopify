@@ -1,0 +1,98 @@
+<%- include('partials/header') -%>
+<div class="container">
+   <form action="/addproduct" method="POST">
+      <div class="row">
+         <div class="col">
+            <div class="form-group">   
+               <label for="exampleInputEmail1">Product's Name</label>
+               <input name="name" type="text" class="form-control"  >
+            </div>
+         </div>
+         <div class="col">
+            <div class="form-group">
+               <label for="exampleInputEmail1">Product's Brand</label>
+               <input name="brand" type="text" class="form-control"  >
+            </div>
+         </div>
+      </div>
+     
+      <div class="row">
+         <div class="col">
+            <div class="form-group">
+               <label for="exampleInputPassword1">Selling price</label>
+               <div class="input-group">
+                  
+                   <div class="input-group-prepend">
+                     <div class="input-group-text">₹</div>
+                   </div>
+                   
+                   <input name="price" type="text" class="form-control">
+                  </div>
+               </div>
+         </div>
+         <div class="col">
+            <div class="form-group">
+               <label for="exampleInputPassword1">Category</label>
+               <input name="category" type="text" class="form-control" >
+            </div>
+         </div>
+      </div>
+      <div class="row">
+        <div class="col">
+           <div class="form-group">   
+              <label for="exampleInputEmail1">Product's Age</label>
+              <input name="age" type="text" class="form-control" >
+           </div>
+        </div>
+        <div class="col">
+           <div class="form-group">
+              
+              <label for="exampleInputEmail1">Seller's Name</label>
+              <input name="sellerName" type="text" class="form-control" value="<%= user.name%>" readonly >
+           </div>
+        </div>
+     </div>
+      <div class=row>
+        <div class="col">
+         <div class="form-group">
+            <label for="exampleInputPassword1">Contact Number</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">+91</div>
+                </div>
+         
+                <input type="number" class="form-control" id="inlineFormInputGroupUsername" name="contact" id="contact" placeholder="Username">
+              </div>
+            </div>
+        </div>
+         <div class="col">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contact email</label>
+            <input name="email" type="text" class="form-control" value="<%=user.username%>" readonly>
+         </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class= col">
+           <div class="form-group">
+         <label for="exampleInputPassword1">Location</label>
+         <input name="location" type="text" class="form-control">
+      </div>
+   </div>
+      <div class="col">
+      <div class="form-group">
+         <label for="exampleInputPassword1">Image URL</label>
+         <input name="image" type="text" class="form-control">
+         <label for="exampleInputPassword1">ⓘ  Upload picture on Gdrive and paste its link here </label>
+       </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description: About Product</label>
+      <textarea name="description" cols="73" row="5" class="form-control" rows="3"></textarea>
+    </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+   </form>
+   <br>
+</div>
+<%- include('partials/footer') -%>

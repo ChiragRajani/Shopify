@@ -1,0 +1,32 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+   <div class="jumbotron" id="he">
+      <h1 id="he">All available Products</h1>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+      <a href="/post-product"class="btn btn-dark">Sell a product</a>
+  </div>
+   <div class="row text-center " style="display:flex; flex-wrap:wrap ;">
+    <div class="row" id="rw">
+      <% product.forEach(function(product){   %>
+        <div id="th">
+       
+              <div class="column-sm"> 
+                
+                <div  class="img-thumbnail" id="thumb">
+                      <img  src = "<%=  product.image %>"  width="250" height="140">
+                     <div  class="caption">
+                       <h3><%= product.name %></h3>
+                       <a href="/product/<%= product._id%>" class="btn btn-dark">More Infos</a>
+                    </div> 
+                  </div>
+                  <br>
+              </div>
+          
+        </div>
+      <%  }) ;  %>
+    </div>
+  </div>
+<%- include('partials/footer') -%>
+   
+</div>

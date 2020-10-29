@@ -1,0 +1,112 @@
+form{
+    
+    padding-top: 40px;
+    background-color: aliceblue;
+}
+.nav-item{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+body{
+    background-color: teal ;
+}
+li{
+    font-size:larger;
+    color: antiquewhite;
+}
+.dropdown{
+    font-size: medium;
+    padding: 3px;
+    padding-left: 10px;
+}
+img{
+    height: 350px;
+    width: 290px;
+}
+#thumb{
+    
+    color:rgb(160,160,160);
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+    border-color: rgb(32,32,102);
+    width: 350px;
+    height: 500px;
+  }
+  #rw{
+       margin-left: 20px;
+       
+  }
+
+.column-sm{
+    padding-right: 23px;
+}
+ 
+
+  .searchbar{
+    background-color: rgb(52,58,68);
+    padding-top: 0px;
+ 
+}
+#head{
+    color:  dodgerblue;;
+}
+.jumbotron{
+    margin-top: 20px;
+}
+.stamp{
+    margin-top: 40px;
+    padding:20px 40px;
+    border: .5px solid blueviolet; 
+    flex:initial ;
+    flex-wrap: wrap;
+    background-color: rgb(240,248,255);
+    height: auto;
+    
+}
+.query{
+    background-color: aliceblue;
+    border: .5px solid blueviolet;
+    height: 150px;
+    padding: 10px;
+}
+.stamp h4{
+    width: 100px;
+}
+#stampimage{
+    height: 600px;
+width: 465px;
+}
+.contact-form{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.product-info{
+ width:auto;  
+ padding: 30px;
+ text-overflow: ellipsis;
+}
+  
+.product-info,h4{
+    color: dodgerblue;
+    padding-top: 10px;
+}
+h4{
+    text-decoration: underline;
+}
+h7{
+
+   float: right;
+   margin-right: 10px;
+   
+}
+  h4, h7 {
+    width: 50%;
+    height: 60px;
+ 
+    display: inline;
+    color: dodgerblue;
+  }
+  .contact{
+      float:right;
+  }
