@@ -251,6 +251,4 @@ function checkNotAuthenticated(req, res, next) {
     next();
 }
 
-app.listen(port,(err)=>{
-    console.log("Server started at"+port) ;
-})
+app.listen(port);
