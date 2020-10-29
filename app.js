@@ -15,7 +15,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const user = require('./models/user.js');
 const queries = require('./models/queries.js');
 //mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/shopify",({ useNewUrlParser: true,useUnifiedTopology: true  }));
+//mongoose.connect("mongodb://localhost:27017/shopify",({ useNewUrlParser: true,useUnifiedTopology: true  }));
 const port=process.env.PORT || 5500 ;
 app.use(bodyParser.urlencoded({extended:true})) ;
 app.use(flash());
