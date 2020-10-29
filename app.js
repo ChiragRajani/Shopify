@@ -2,7 +2,7 @@ const mongoose= require('mongoose') ;
 const express= require('express') ;
 const app=express() ;
 const product = require("./models/product.js");
-const dotenv= require('dotenv').config({path: __dirname + '/.env'})
+const dotenv= require('dotenv').config()
 const query = require("./models/queries.js");
 const users = require("./models/user.js");
 const bodyParser= require('body-parser') ;
@@ -14,8 +14,8 @@ const flash=require('express-flash');
 const passportLocalMongoose = require('passport-local-mongoose');
 const user = require('./models/user.js');
 const queries = require('./models/queries.js');
-mongoose.Promise = global.Promise;
-//mongoose.connect("mongodb://localhost:27017/shopify",({ useNewUrlParser: true,useUnifiedTopology: true  }));
+//mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27017/shopify",({ useNewUrlParser: true,useUnifiedTopology: true  }));
 const port=process.env.PORT || 5500 ;
 app.use(bodyParser.urlencoded({extended:true})) ;
 app.use(flash());
