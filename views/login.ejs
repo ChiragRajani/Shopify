@@ -5,8 +5,7 @@
 <body>
     <div class="login-wrap">
         <h1>Login</h1>
-      <%if(expressFlash.length > 0) %>
-        <h5><%=expressFlash%></h5>
+     
         <form action="/login" method="POST" class="form">
             <div class="form-group">
             <input type="text" placeholder="Email address" class="form-control"name="username" id="username" required />

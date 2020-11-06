@@ -14,8 +14,9 @@ const flash=require('express-flash');
 const passportLocalMongoose = require('passport-local-mongoose');
 const user = require('./models/user.js');
 const queries = require('./models/queries.js');
-//mongoose.Promise = global.Promise;
-//mongoose.connect("mongodb://localhost:27017/shopify",({ useNewUrlParser: true,useUnifiedTopology: true  }));
+mongoose.Promise = global.Promise;
+ mongoose.connect("mongodb://localhost:27017/olx",({ useNewUrlParser: true,useUnifiedTopology: true  }));
+// mongoose.connect("mongodb+srv://chirag12:nisharajani@cluster0.fr1j0.mongodb.net/shopify?retryWrites=true&w=majority",({ useNewUrlParser: true,useUnifiedTopology: true  }))
 const port=process.env.PORT || 5500 ;
 app.use(bodyParser.urlencoded({extended:true})) ;
 app.use(flash());
@@ -122,12 +123,16 @@ app.post("/register", function (req, res) {
             console.log("User Registerd "+ req.body.email);
             res.render("login",{user:req.user});
         }
+
+
     );
 });
 
 app.get("/login",(req,res)=>{
     res.render("login",{ user:req.user,expressFlash:""}) ;
 }) 
+
+
 
 app.get("/product/:id",(req,res)=>{
     var a = new mongoose.Types.ObjectId(req.params.id) ;
