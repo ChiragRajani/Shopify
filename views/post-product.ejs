@@ -5,13 +5,13 @@
          <div class="col">
             <div class="form-group">   
                <label for="exampleInputEmail1">Product's Name</label>
-               <input name="name" type="text" class="form-control"  >
+               <input name="name" type="text" class="form-control"  required >
             </div>
          </div>
          <div class="col">
             <div class="form-group">
                <label for="exampleInputEmail1">Product's Brand</label>
-               <input name="brand" type="text" class="form-control"  >
+               <input name="brand" type="text" class="form-control"  required >
             </div>
          </div>
       </div>
@@ -26,14 +26,53 @@
                      <div class="input-group-text">₹</div>
                    </div>
                    
-                   <input name="price" type="text" class="form-control">
+                   <input name="price" type="text" class="form-control" required>
                   </div>
                </div>
          </div>
          <div class="col">
             <div class="form-group">
-               <label for="exampleInputPassword1">Category</label>
-               <input name="category" type="text" class="form-control" >
+             
+                <label for="inputGroupSelect01">Options</label>
+                <select placeholder ="Category" class="custom-select" id="inputGroupSelect01" name="category">
+                  <option value="todays-deals">Deals</option><option value="alexa-skills">Alexa Skills</option>
+                  
+                  <option value="fashion">Fashion</option>
+                  <option value="pantry">Pantry</option>
+                  <option value="appliances">Appliances</option>
+                  <option value="mobile-apps">Apps &amp; Games</option>
+                  <option value="baby">Baby</option>
+                  <option value="beauty">Beauty</option>
+                  <option value="stripbooks">Books</option>
+                  <option value="automotive">Car &amp; Motorbike</option>
+                  <option value="apparel">Clothing &amp; Accessories</option>
+                  <option value="collectibles">Collectibles</option>
+                  <option value="computers">Computers &amp; Accessories</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="furniture">Furniture</option>
+                  <option value="lawngarden">Garden &amp; Outdoors</option>
+                  <option value="gift-cards">Gift Cards</option>
+                  <option value="grocery">Grocery &amp; Gourmet Foods</option>
+                  <option value="hpc">Health &amp; Personal Care</option>
+                  <option value="kitchen">Home &amp; Kitchen</option>
+                  <option value="industrial">Industrial &amp; Scientific</option>
+                  <option value="jewelry">Jewellery</option>
+                  <option value="luggage">Luggage &amp; Bags</option>
+                  <option value="luxury-beauty">Luxury Beauty</option>
+                  <option value="dvd">Movies &amp; TV Shows</option>
+                  <option value="popular">Music</option>
+                  <option value="mi">Musical Instruments</option>
+                  <option value="office-products">Office Products</option>
+                  <option value="pets">Pet Supplies</option>
+                  <option value="shoes">Shoes &amp; Handbags</option>
+                  <option value="software">Software</option>
+                  <option value="sporting">Sports, Fitness &amp; Outdoors</option>
+                  <option value="home-improvement">Tools &amp; Home Improvement</option>
+                  <option value="toys">Toys &amp; Games</option>
+                  <option value="videogames">Video Games</option>
+                  <option value="watches">Watches</option>
+                </select>
+               
             </div>
          </div>
       </div>
@@ -41,7 +80,16 @@
         <div class="col">
            <div class="form-group">   
               <label for="exampleInputEmail1">Product's Age</label>
-              <input name="age" type="text" class="form-control" >
+              <div class="row">
+               <div class="col">
+                  <label for="exampleInputEmail1">Years</label>
+                 <input type="text" class="form-control" placeholder="Years" name="year_age">
+               </div>
+               <div class="col">
+                  <label for="exampleInputEmail1">Months</label>
+                 <input type="text" class="form-control" placeholder="Months" name="month_age">
+               </div>
+             </div>
            </div>
         </div>
         <div class="col">
@@ -61,7 +109,7 @@
                   <div class="input-group-text">+91</div>
                 </div>
          
-                <input type="number" class="form-control" id="inlineFormInputGroupUsername" name="contact" id="contact" placeholder="Username">
+                <input type="number" class="form-control" id="inlineFormInputGroupUsername" name="contact" id="contact" placeholder="Contact Number" required>
               </div>
             </div>
         </div>
@@ -76,13 +124,13 @@
         <div class= col">
            <div class="form-group">
          <label for="exampleInputPassword1">Location</label>
-         <input name="location" type="text" class="form-control">
+         <input name="location" type="text" class="form-control" required>
       </div>
    </div>
       <div class="col">
       <div class="form-group">
          <label for="exampleInputPassword1">Image URL</label>
-         <input name="image" type="text" class="form-control">
+         <input name="image" type="text" class="form-control" required>
          <label for="exampleInputPassword1">ⓘ  Upload picture on Gdrive and paste its link here </label>
        </div>
       </div>

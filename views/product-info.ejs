@@ -4,54 +4,62 @@
       <div class="row">
          <div class="col-sm">
             <img id="stampimage" src="<%=product.image%>" >
+            <h3>Description</h4>
+             <h6><%=product.description%></h7>
+      
          </div>
          <div class="col-sm">
             <div class="product-info">
                <h1><%=product.name%> </h1>
             </div>
-            <br>
+             
             <div class="product-info">
                <h4>Seller's Name:</h4>
                <h7><%=product.sellerName%></h7>
             </div>
-            <br>
+             
             <div class="product-info">
                <h4>Selling Price</h4>
                <h7><%=product.sellingPrice%></h7>
             </div>
-            <br>
+             
             <div class="product-info">
                <h4>Product Brand</h4>
                <h7><%=product.brand%></h7>
             </div>
+             
             <div class="product-info">
                <h4>Product's Age</h4>
                <h7><%=product.age%></h7>
             </div>
+             
             <div class="product-info">
                <h4>Category</h4>
                <h7><%=product.category%></h7>
             </div>
-            <div class="product-info">
-               <h4>Description</h4>
-               <h7><%=product.description%></h7>
-            </div>
+             
+         
+             
             <div class="product-info">
                <h4>Seller's Location</h4>
                <h7><%=product.sellerLocation%></h7>
             </div>
+             
             <div class="product-info">
                <h4>Seller's Contact</h4>
                <h7><%=product.sellerPhone%></h7>
             </div>
+             
             <div class="product-info">
                <h4>Seller's Mail</h4>
                <h7> <%=product.sellerEmail%></h7>
             </div>
+             
             <div class="product-info">
               <h4>Posted on</h4>
               <h7 id ="da"></h7>
            </div>
+            
          </div>
       </div>
       <% if(user) {%>
@@ -82,17 +90,17 @@
       </div>
 
 
-    <%  }else{ %> 
-      <br>
-      <a href="#" type="submit" class="btn btn-dark contact">Edit Product</a><br>
-      <% } %>
-    <% if(query){  %>
-      <h1 id="head">Buying Requests</h1><br>
-      <% query.forEach(function(element){  %>
-          <div class="query">
-        <p><h2>From: <%=element.buyerName%> { <%=element.buyerUserName%> } </h2>
+    <%  } %> 
+     
+    <% if(Object.keys(query).length !== 0 && query.constructor !== Object){  %>
+
+      <h1 id="head">Buying Request</h1><br>
+      <% query.forEach(function(element,i){  %>
+                <div class="query">
+        <p><h4> <%= i+1 %>.&nbsp;  From:<%=element.buyerName%> <h6>< <%=element.buyerUserName%> ></h6> </h4></p>
         <h3>Message: <%=element.message%> </h3>
       </div>
+       
       <% }) %>
      
    <% }} %>

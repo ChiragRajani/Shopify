@@ -194,7 +194,7 @@ app.post("/addproduct",(req,res)=>{
             name:req.body.name,
             sellingPrice:req.body.price,
             brand:req.body.brand,
-            age:req.body.age ,
+            age: req.body.year_age+" Years "+req.body.month_age+" Months" ,
             category:req.body.category,
             description:req.body.description,
             sellerName:req.body.sellerName,
@@ -256,4 +256,6 @@ function checkNotAuthenticated(req, res, next) {
     next();
 }
 
-app.listen(port);
+app.listen(port,()=>{
+    console.log("Server started at ",port);
+});
