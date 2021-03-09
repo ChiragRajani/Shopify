@@ -1,126 +1,155 @@
 <%- include('partials/header') -%>
-<div class="container">
-   <div class="stamp">
-      <div class="row">
-         <div class="col-sm">
-            <img id="stampimage" src="<%=product.image%>" >
-            <h3>Description</h4>
-             <h6><%=product.description%></h7>
-      
-         </div>
-         <div class="col-sm">
-            <div class="product-info">
-               <h1><%=product.name%> </h1>
-            </div>
-             
-            <div class="product-info">
-               <h4>Seller's Name:</h4>
-               <h7><%=product.sellerName%></h7>
-            </div>
-             
-            <div class="product-info">
-               <h4>Selling Price</h4>
-               <h7><%=product.sellingPrice%></h7>
-            </div>
-             
-            <div class="product-info">
-               <h4>Product Brand</h4>
-               <h7><%=product.brand%></h7>
-            </div>
-             
-            <div class="product-info">
-               <h4>Product's Age</h4>
-               <h7><%=product.age%></h7>
-            </div>
-             
-            <div class="product-info">
-               <h4>Category</h4>
-               <h7><%=product.category%></h7>
-            </div>
-             
-         
-             
-            <div class="product-info">
-               <h4>Seller's Location</h4>
-               <h7><%=product.sellerLocation%></h7>
-            </div>
-             
-            <div class="product-info">
-               <h4>Seller's Contact</h4>
-               <h7><%=product.sellerPhone%></h7>
-            </div>
-             
-            <div class="product-info">
-               <h4>Seller's Mail</h4>
-               <h7> <%=product.sellerEmail%></h7>
-            </div>
-             
-            <div class="product-info">
-              <h4>Posted on</h4>
-              <h7 id ="da"></h7>
-           </div>
-            
-         </div>
-      </div>
-      <% if(user) {%>
-      <%if(user.username!==product.sellerEmail){ %>
-        <br><br>
-      <button class="btn btn-dark contact" onClick="openForm()" >Contact</button>
-      <br>
-      <div class="contact-form">
-         <form action="/post/<%= product._id%>" method="POST" class="form" id="frm"style="display: none" >
-            <div class="form-group">
-               <label for="exampleInputPassword1">Your Email: </label>
-               <input type="text" placeholder="Email address" class="form-control"name="buyerUsername" id="buyerUsername"  value="<%=user.username%>"required readonly/>
-            </div>
-            <div class="form-group">
-               <label for="exampleInputPassword1">Your Name: </label>
-               <input type="text" placeholder="Email address" class="form-control"name="buyerName" id="buyerName" value="<%=user.name%>"required />
-            </div>
-            <div class="form-group">
-               <label for="exampleInputPassword1">Seller's Email: </label>
-               <input type="text" placeholder="Email address" class="form-control"name="sellerEmail" id="sellerEmail" value="<%=product.sellerEmail%>"required readonly/>
-            </div>
-            <div class="form-group">
-               <label for="exampleInputPassword1">Message</label>
-               <input type="text" placeholder="Message" class="form-control"name="message" id="message" required  />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-         </form>
-      </div>
+    <div class="container">
+        <div class="stamp">
+            <div class="row">
+                <div class="col-sm">
+                    <img id="stampimage" src="<%=product.image%>">
+                    <h3>Description</h4>
+                        <h6>
+                            <%=product.description%>
+                                </h7>
+
+                </div>
+                <div class="col-sm">
+                    <div class="product-info">
+                        <h1>
+                            <%=product.name%>
+                        </h1>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Seller's Name:</h4>
+                        <h7>
+                            <%=product.sellerName%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Selling Price</h4>
+                        <h7>
+                            <%=product.sellingPrice%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Product Brand</h4>
+                        <h7>
+                            <%=product.brand%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Product's Age</h4>
+                        <h7>
+                            <%=product.age%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Category</h4>
+                        <h7>
+                            <%=product.category%>
+                        </h7>
+                    </div>
 
 
-    <%  } %> 
-     
-    <% if(Object.keys(query).length !== 0 && query.constructor !== Object){  %>
 
-      <h1 id="head">Buying Request</h1><br>
-      <% query.forEach(function(element,i){  %>
-                <div class="query">
-        <p><h4> <%= i+1 %>.&nbsp;  From:<%=element.buyerName%> <h6>< <%=element.buyerUserName%> ></h6> </h4></p>
-        <h3>Message: <%=element.message%> </h3>
-      </div>
-       
-      <% }) %>
-     
-   <% }} %>
-   </div>
-</div>
-<%- include('partials/footer') -%>
-<script>
-  console.log("<%=query[1]%>")
-  var date= new Date('<%=product.createdAt%>') ;
-  var dat=document.getElementById("da") ;
-  dat.textContent=date.toDateString() ;
-   function openForm()
-   {
-   var x =document.getElementById("frm");
-   if (x.style.display === "none") {
-     x.style.display = "block";
-   } else {
-     x.style.display = "none";
-   }
-   console.log("<%= product._id%>")
-   
-   }
-</script>
+                    <div class="product-info">
+                        <h4>Seller's Location</h4>
+                        <h7>
+                            <%=product.sellerLocation%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Seller's Contact</h4>
+                        <h7>
+                            <%=product.sellerPhone%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Seller's Mail</h4>
+                        <h7>
+                            <%=product.sellerEmail%>
+                        </h7>
+                    </div>
+
+                    <div class="product-info">
+                        <h4>Posted on</h4>
+                        <h7 id="da"></h7>
+                    </div>
+
+                </div>
+            </div>
+            <% if(user) {%>
+                <%if(user.username!==product.sellerEmail){ %>
+                    <br><br>
+                    <button class="btn btn-dark contact" onClick="openForm()">Contact</button>
+                    <br>
+                    <div class="contact-form">
+                        <form action="/post/<%= product._id%>" method="POST" class="form" id="frm" style="display: none">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Your Email: </label>
+                                <input type="text" placeholder="Email address" class="form-control" name="buyerUsername" id="buyerUsername" value="<%=user.username%>" required readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Your Name: </label>
+                                <input type="text" placeholder="Email address" class="form-control" name="buyerName" id="buyerName" value="<%=user.name%>" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Seller's Email: </label>
+                                <input type="text" placeholder="Email address" class="form-control" name="sellerEmail" id="sellerEmail" value="<%=product.sellerEmail%>" required readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Message</label>
+                                <input type="text" placeholder="Message" class="form-control" name="message" id="message" required />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+
+                    <%  } %>
+
+                        <% if(Object.keys(query).length != 0 && query.constructor !=Object){  %>
+
+                            <h1 id="head">Buying Request</h1><br>
+                            <% query.forEach(function(element,i){  %>
+                                <div class="query">
+                                    <p>
+                                        <h4>
+                                            <%= i+1 %>.&nbsp; From:
+                                                <%=element.buyerName%>
+                                                    <h6>
+                                                        < <%=element.buyerUserName%> ></h6>
+                                        </h4>
+                                    </p>
+                                    <h3>Message:
+                                        <%=element.message%>
+                                    </h3>
+                                </div>
+
+                                <% }) %>
+
+                                    <% }} %>
+        </div>
+    </div>
+    <%- include('partials/footer') -%>
+        <script>
+            console.log("<%=query[1]%>")
+            var date = new Date('<%=product.createdAt%>');
+            var dat = document.getElementById("da");
+            dat.textContent = date.toDateString();
+
+            function openForm() {
+                var x = document.getElementById("frm");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+                console.log("<%= product._id%>")
+
+            }
+        </script>

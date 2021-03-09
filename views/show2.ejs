@@ -1,0 +1,93 @@
+<%- include('partials/header') -%>
+    <div class="container">
+        <div class="jumbotron" id="he">
+            <h1 id="he">All available Products</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+            <a href="/post-product" class="btn btn-dark">Sell a product</a>
+        </div>
+    </div>
+    <div class="full-body">
+
+        <div class="row" style=" display:flex; flex-wrap:wrap ; ">
+            <div class="filer">
+
+                <div id="mainNav" class="navbare">
+                    <a href="/filters/appliances" class="list-group-item" value="appliances ">Appliances</a>
+                    <a href="/filters/mobile-apps" class="list-group-item" value="mobile-apps ">Apps & Games</a>
+                    <a href="/filters/baby" class="list-group-item" value="baby ">Baby</a>
+                    <a href="/filters/beauty" class="list-group-item" value="beauty ">Beauty</a>
+                    <a href="/filters/automotive" class="list-group-item" value="automotive ">Car & Motorbike</a>
+                    <a href="/filters/apparel" class="list-group-item" value="apparel ">Clothing & Accessories</a>
+                    <a href="/filters/computers" class="list-group-item" value="computers ">Computers & Accessories</a>
+                    <a href="/filters/electronics" class="list-group-item" value="electronics ">Electronics</a>
+                    <a href="/filters/furniture" class="list-group-item" value="furniture ">Furniture</a>
+                    <a href="/filters/grocery" class="list-group-item" value="grocery ">Grocery & Gourmet Foods</a>
+                    <a href="/filters/hpc" class="list-group-item" value="hpc ">Health & Personal Care</a>
+                    <a href="/filters/kitchen" class="list-group-item" value="kitchen ">Home & Kitchen</a>
+                    <a href="/filters/industrial" class="list-group-item" value="industrial ">Industrial & Scientific</a>
+                    <a href="/filters/luggage" class="list-group-item" value="luggage ">Luggage & Bags</a>
+                    <a href="/filters/luxury-beauty" class="list-group-item" value="luxury-beauty ">Luxury Beauty</a>
+                    <a href="/filters/mobile" class="list-group-item" value="Mobile ">Mobile</a>
+                    <a href="/filters/music" class="list-group-item" value="popular ">Music</a>
+                    <a href="/filters/musicalInstruments" class="list-group-item" value="mi ">Musical Instruments</a>
+                    <a href="/filters/office-products" class="list-group-item" value="office-products ">Office Products</a>
+                    <a href="/filters/pets" class="list-group-item" value="pets ">Pet Supplies</a>
+                    <a href="/filters/shoes" class="list-group-item" value="shoes ">Shoes & Handbags</a>
+                    <a href="/filters/sporting" class="list-group-item" value="sporting ">Sports, Fitness & Outdoors</a>
+                    <a href="/filters/home-improvement" class="list-group-item" value="home-improvement ">Tools & Home Improvement</a>
+                    <a href="/filters/toys" class="list-group-item" value="toys ">Toys & Games</a>
+                    <a href="/filters/watches" class="list-group-item" value="watches ">Watches</a>
+
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <div class="col">
+
+                <div class="row text-center" style="display:flex; flex-wrap:wrap ;">
+                    <div class="row">
+                        <% product.forEach(function(product){   %>
+                            <div id="th ">
+                                <div class="col" style="display:flex; flex-wrap:wrap ; ">
+                                    <div class="img-thumbnail" id="thumb">
+                                        <img src="<%=product.image %>">
+                                        <div class="caption">
+                                            <h3 id="head">
+                                                <%= product.name %>
+                                            </h3>
+                                            <a href="/product/<%= product._id%>" class="btn btn-dark">View </a>
+                                            <br>
+                                            <h4>₹
+                                                <%=product.sellingPrice %>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+
+                            </div>
+                            <%  }) ;  %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') -%>
+        <!-- <script>
+            function handleCLick() {
+
+            }
+            var mainNav = document.getElementById('mainNav');
+            var navToggle = document.getElementById('navToggle');
+
+            // Start by adding the class "collapse " to the mainNav
+            mainNav.classList.add('collapsed');
+
+            // Establish a function to toggle the class "collapse "
+            function mainNavToggle() {
+                mainNav.classList.toggle('collapsed');
+            }
+
+            // Add a click event to run the mainNavToggle function
+            navToggle.addEventListener('click', mainNavToggle);
+        </script> -->

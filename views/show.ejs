@@ -1,32 +1,89 @@
 <%- include('partials/header') -%>
+    <div class="full-body">
 
-<div class="container">
-   <div class="jumbotron" id="he">
-      <h1 id="he">All available Products</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
-      <a href="/post-product"class="btn btn-dark">Sell a product</a>
-  </div>
-   <div class="row text-center " style="display:flex; flex-wrap:wrap ;">
-    <div class="row" id="rw">
-      <% product.forEach(function(product){   %>
-        <div id="th">
-       
-              <div class="column-sm"> 
-                
-                <div  class="img-thumbnail" id="thumb">
-                      <img  src = "<%=  product.image %>"  width="250" height="140">
-                     <div  class="caption">
-                       <h3><%= product.name %></h3>
-                       <a href="/product/<%= product._id%>" class="btn btn-dark">View </a>
-                    </div> 
-                  </div>
-                  <br>
-              </div>
-          
-        </div>
-      <%  }) ;  %>
-    </div>
-  </div>
-<%- include('partials/footer') -%>
-   
-</div>
+        <div class="row side">
+
+            <div class="col side2">
+                <a class="btn btn-light btn-norm collapsible " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Link with href
+          </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="appliances">Appliances</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="mobile-apps">Apps & Games</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="baby">Baby</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="beauty">Beauty</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="stripbooks">Books</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="automotive">Car & Motorbike</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="apparel">Clothing & Accessories</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="computers">Computers & Accessories</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="electronics">Electronics</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="furniture">Furniture</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="grocery">Grocery & Gourmet Foods</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="hpc">Health & Personal Care</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="kitchen">Home & Kitchen</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="industrial">Industrial & Scientific</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="luggage">Luggage & Bags</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="luxury-beauty">Luxury Beauty</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="Mobile">Mobile</label></div>
+
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="dvd">Movies & TV Shows</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="popular">Music</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="mi">Musical Instruments</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="office-products">Office Products</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="pets">Pet Supplies</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="shoes">Shoes & Handbags</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="software">Software</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="sporting">Sports, Fitness & Outdoors</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="home-improvement">Tools & Home Improvement</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="toys">Toys & Games</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="videogames">Video Games</label></div>
+                    <div class="checkbox"> <label><input name="category" onclick="handleClick(this);"  type="radio" value="watches">Watches</label></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="jumbotron" id="he">
+                    <h1 id="he">All available Products</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
+                    <a href="/post-product" class="btn btn-dark">Sell a product</a>
+                </div>
+
+                <div class="row text-center " style="display:flex; flex-wrap:wrap ;">
+                    <div class="row" id="rw">
+                        <% product.forEach(function(product){   %>
+                            <div id="th">
+
+                                <div class="column-sm">
+
+                                    <div class="img-thumbnail" id="thumb">
+                                        <img src="<%=  product.image %>" width="250" height="140">
+                                        <div class="caption">
+                                            <h3>
+                                                <%= product.name %>
+                                            </h3>
+                                            <a href="/product/<%= product._id%>" class="btn btn-dark">View </a>
+                                            <br>
+                                            <h4>₹
+                                                <%=product.sellingPrice %>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+
+                            </div>
+                            <%  }) ;  %>
+
+                    </div>
+                </div>
+                <%- include('partials/footer') -%>
+
+            </div>
+
+            <script>
+                function handleClick(myRadio) {
+                    var cat = myRadio.value;
+                    window.location = "/filters/" + cat;
+                    // alert('New value: ' + myRadio.value); 
+
+                }
+            </script>
