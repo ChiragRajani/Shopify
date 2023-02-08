@@ -16,7 +16,6 @@ const user = require('./models/user.js');
 const queries = require('./models/queries.js');
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/olx", ({ useNewUrlParser: true, useUnifiedTopology: true }));
-// mongoose.connect("mongodb+srv://chirag12:nisharajani@cluster0.fr1j0.mongodb.net/shopify?retryWrites=true&w=majority",({ useNewUrlParser: true,useUnifiedTopology: true  }))
 const port = process.env.PORT || 5500;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
