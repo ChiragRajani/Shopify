@@ -17,7 +17,6 @@ const queries = require('./models/queries.js');
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/olx", ({ useNewUrlParser: true, useUnifiedTopology: true }));
 const port = process.env.PORT || 5500;
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set("view engine", "ejs");
